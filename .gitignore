@@ -60,7 +60,7 @@ Thumbs.db
 
 # ignore log files and databases
 *.log
-#*.sql
+*.sql
 *.sqlite
 
 # ignore compiled files
@@ -79,7 +79,7 @@ Thumbs.db
 *.jar
 *.rar
 *.tar
-*.zip
+#*.zip
 
 # ignore everything in the "wp-content" directory, except:
 # "mu-plugins" directory
