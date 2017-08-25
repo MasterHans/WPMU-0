@@ -1,0 +1,597 @@
+/*Добавляем шрифты с моего сайта*/
+@font-face {
+    font-family: 'open_sanssemibold';
+    src: url('../fonts/opensans-semibold-webfont.eot');
+    src: url('../fonts/opensans-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/opensans-semibold-webfont.woff2') format('woff2'),
+    url('../fonts/opensans-semibold-webfont.woff') format('woff'),
+    url('../fonts/opensans-semibold-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'helveticaneuecyrroman';
+    src: url('../fonts/helveticaregular-webfont.eot');
+    src: url('../fonts/helveticaregular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/helveticaregular-webfont.woff2') format('woff2'),
+    url('../fonts/helveticaregular-webfont.woff') format('woff'),
+    url('../fonts/helveticaregular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sanslight';
+    src: url('../fonts/opensans-light-webfont.eot');
+    src: url('../fonts/opensans-light-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/opensans-light-webfont.woff2') format('woff2'),
+    url('../fonts/opensans-light-webfont.woff') format('woff'),
+    url('../fonts/opensans-light-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('../fonts/opensans-regular-webfont.eot');
+    src: url('../fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/opensans-regular-webfont.woff2') format('woff2'),
+    url('../fonts/opensans-regular-webfont.woff') format('woff'),
+    url('../fonts/opensans-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*шрифт по умолчанию*/
+body {
+    font-family: 'open_sansregular';
+}
+/***Логотип***/
+.logo-img {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 25px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+/***слоган сайта***/
+p.slogan {
+    font-family: Verdana, Arial, tahoma;
+    text-align: center;
+    font-size: 18px;
+    color: #5d5d5d;
+    letter-spacing:2px;
+}
+
+/***Главное меню***/
+.main-menu {
+    border:0;
+    background: #FFF;
+    border-top: 1px #e2e2e2 solid;
+    border-bottom: 1px #e2e2e2 solid;
+    border-radius: 0;
+    margin: 0 auto;
+    text-align: center;
+    position: relative; /* относительное позиционирование */
+}
+
+
+
+.main-nav{
+
+   position: relative; /* относительное позиционирование */
+   left: 50%; /* сдвигаем меню вправо */
+}
+
+.main-nav li {
+    position:relative;
+    left:-50%;
+
+}
+
+.main-menu .main-nav li a{
+    font-family: 'open_sansregular';
+    width:120px;
+    border: 1px #FFF solid;
+    border-right: 1px #e2e2e2 solid;
+    background: #FFF;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top:5px;
+    margin-bottom:5px;
+    font-size:14px;
+    color: #999;
+}
+
+.main-menu .main-nav > .active > a,.main-menu .main-nav > .active > a:hover,.main-menu .main-nav > .active > a:focus {
+    background: #FFF;
+
+}
+
+.main-menu .main-nav li.current-menu-item a{
+        color: #555;
+}
+
+.main-nav li:last-child a{
+    border-right: 0;
+}
+
+/***Картнки в меню***/
+.main-menu .main-nav li a img{
+    width:30px !important;
+    height:30px !important;;
+    display:block !important;;
+    margin:0 auto !important;;
+ }
+
+.header {
+    margin-bottom: 20px;
+}
+
+/***сайдбар***/
+
+/*блок ссылок на соц. сетях*/
+.socset{
+    text-align: center;
+    margin-bottom:20px;
+    margin-top:15px;
+}
+
+.socset img{
+    height: 34px;
+    margin: 0;
+}
+
+/*Линия сайдбар*/
+.hr-sidebar{
+    margin:0 0 20px 0;
+}
+
+/*Форма поиска*/
+.search-form {
+    margin-bottom: 20px;
+}
+.search-form input[type=text] {
+    width:85%;
+    float:left;
+
+}
+
+.btn-search {
+ width:15%;
+ float:none;
+ background: #0a97b7;
+}
+
+/*Виджет*/
+.vidget{
+    /*font-family: 'open_sansregular';*/
+    font-family: 'helveticaneuecyrroman';
+    padding: 25px 20px 25px 20px;
+
+}
+.vidget h3{
+    margin-top: 0;
+    font-size: 18px;
+    padding-left: 9px;
+    border-left: 2px #0b98b7 solid;
+    text-transform: uppercase;
+}
+
+.vidget-text {
+    font-size: 14px;
+    text-transform: uppercase;
+    /*text-align: justify;*/
+
+}
+
+.vidget-text ul{
+    list-style: none;
+    padding: 0 12px 0 12px;
+}
+
+.vidget-text li {
+    margin-bottom: 10px;
+    border-bottom: 1px #ddd solid;
+    padding-bottom:10px;
+}
+
+.vidget-text li a{
+    text-decoration: none;
+    color: #999;
+}
+
+.vidget-text li a:hover{
+    color: #0a97b7;
+}
+
+.vidget-text li:last-child {
+    border-bottom: 0;
+}
+
+/*.vidget p{*/
+    /*font-size: 14px;*/
+    /*margin-bottom:0px;*/
+    /*text-transform: uppercase;*/
+    /*text-align: justify;*/
+/*}*/
+
+/*.vidget p i{*/
+    /*margin-right: 9px;*/
+    /*float:left;*/
+    /*color: #fea360;*/
+/*}*/
+
+/*Основной контент - статьи , посты и т.д.*/
+.post{
+    font-size: 14px;
+    font-family: 'open_sansregular';
+}
+.post img{
+    /*width:600px;*/
+    /*height: 340px;*/
+}
+
+/*Дата поста*/
+.post-date{
+    margin-top:3px;
+    font-size: 20px;
+}
+/*Рубрика поста*/
+.post-rubrika{
+    text-align: right;
+    font-size: 20px;
+    margin-top:3px;
+
+}
+
+/*картинка миниатюры*/
+.img-polaroid {
+    width:600px;
+}
+
+/*Заголовок поста*/
+.caption h3{
+    margin-top:5px;
+    margin-bottom:10px;
+}
+.caption h3 a{
+    /*font-size:20px;*/
+    font-family: 'open_sansregular';
+    color: #4f4d4d;
+    text-decoration: none;
+}
+
+.caption h3 a:hover{
+    color: #0a97b7;
+}
+
+.caption p{
+    text-align: justify;
+}
+
+.btn-next{
+    background:#0a97b7;
+
+}
+
+.footer {
+    text-align: center;
+    font-family: 'open_sanslight';
+}
+
+/*страница поста*/
+.fullpost{
+    border:0;
+}
+
+/*хлебные крошки*/
+.post-breadcrumb{
+    font-family: 'open_sanslight';
+    font-size:16px;
+    background: #fff;
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+
+.post-breadcrumb a{
+    text-decoration: none;
+    color: #000;
+}
+
+.post-breadcrumb a:hover{
+    color: #0a97b7;
+}
+/*Метки страницы*/
+.meta{
+    padding-left:13px;
+}
+
+.meta .fa{
+    color:#0a97b7;
+}
+
+.meta a{
+    color:#4f4d4d;
+    text-decoration: none;
+}
+
+.meta a:hover{
+    color:#0a97b7;
+    text-decoration: none;
+}
+
+/*для блока комментарии*/
+.commentwrap{
+    padding:13px;
+    font-family: 'open_sansregular';;
+}
+
+.commentwrap h3 .fa {
+    color: #0a97b7;
+}
+
+.content h3 {
+    font-family: 'open_sansregular';
+    color: #4f4d4d;
+
+}
+
+.commentwrap h3 a{
+    text-decoration: none;
+    color: #4f4d4d;
+}
+.commentwrap h3 a:hover{
+    color: #0a97b7;
+
+}
+
+.comment .fa{
+    color:#0a97b7
+}
+
+
+/* Контейнер комментария */
+.commentlist {
+    padding: 0;
+    text-align: justify;
+    width: 100%;
+    margin: 10px auto;
+    display: table;
+    background: #fff;
+    border: 0;
+    color:#333;
+}
+
+.commentlist .comment {
+    padding: 5px;
+    list-style: none;
+    display: block;
+}
+
+.commentlist .comment .comment {
+    margin: 10px 10px 10px 10px;
+    padding: 5px;
+    width: auto;
+}
+
+/* Аватарка, имя */
+.comment-author {
+    width: 80px;
+    float: left;
+    text-align: center;
+}
+
+/* Имя автора */
+.comment-author .fn {
+    font-weight: bold;
+    color: #fea360;
+}
+
+/* двоеточие */
+.comment-author .says {
+    display: none;
+}
+
+/* Сама аватарка тег img */
+.avatar {
+    width: 60px;
+    border-right: 1px solid #dedcdc;
+    border-bottom: 1px solid #dedcdc;
+    padding: 5px;
+    background: #f8f6f6;
+}
+
+/* Дата добавления */
+.comment-meta {
+    width: 83%;
+    float: left;
+    /*border-bottom: 1px solid #4f4d4d;*/
+}
+
+/* Текст комментария */
+.commentlist p {
+    margin: 15px 0 0px 20px;
+    padding-bottom: 10px;
+    width: 80%;
+    float: left;
+    border-bottom: 1px dotted #4f4d4d;
+}
+
+/* Кнопка "Ответить" */
+.commentlist .reply {
+    width: 98%;
+    float: left;
+    text-align: right;
+    padding: 0 0 5px 0;
+}
+
+
+
+/*Форма ввода комментариев*/
+.form-inline label{
+    margin-bottom:10px;
+}
+
+.form-inline .input-group{
+    margin-bottom:15px;
+}
+
+.form-inline .input-group .form-control{
+    width:220px;
+}
+
+.form-inline .input-group textarea{
+    width: 500px;
+    height: 150px;
+    margin-bottom:15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-submit{
+    background:#0a97b7;
+}
+
+.input-group-addon{
+    background: #0a97b7;
+    color: #fff;
+}
+
+/*По страничная навигация*/
+.page-nav{
+    display:block;
+    margin: 10px 0px;
+    text-align: center;
+}
+/*.pagination {*/
+    /*margin:0;*/
+    /*padding:0;*/
+
+/*}*/
+
+
+/*.page-nav>.pagination>li>a:hover,*/
+/*.page-nav>.pagination>li>a:focus,*/
+/*.page-nav>.pagination>li>span:hover,*/
+/*.page-nav>.pagination>li>span:focus*/
+/*{*/
+    /*color: #FFF;*/
+    /*background:#286090;*/
+/*}*/
+
+/* Постраничная навигация */
+.wp-pagenavi {
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    display: inline-block;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.wp-pagenavi a:last-child, .wp-pagenavi span:last-child {
+    border-radius: 0 4px 4px 0;
+}
+
+.wp-pagenavi .pages {
+    border-radius: 4px 0 0 4px;
+    border-left: 1px solid #ddd;
+}
+
+.wp-pagenavi a, .wp-pagenavi span {
+    text-decoration: none;
+    font-size: 14px;
+    padding: 4px 12px;
+    line-height: 20px;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-left: 0;
+    color:#777;
+}
+
+.previouspostslink {
+    border-radius: 4px 0 0 4px;
+    border-left: 1px solid #ddd;
+}
+
+.wp-pagenavi a:hover, .wp-pagenavi span.current {
+    color: #FFF;
+    background:#286090;
+}
+
+.p404 {
+    text-align: center;
+}
+
+.p404 h1 {
+    color:#0a97b7;
+}
+
+
+.p404 i{
+    margin:0;
+    color:#fea360;
+}
+
+/*Конструкции для разных экранов*/
+@media screen and (max-width: 767px) {
+    .main-nav{
+        position: inherit ;
+    }
+    .main-nav li {
+        position: inherit ;
+    }
+    .main-menu .main-nav li a{
+        width: 100%;
+        border-right: 0;
+        text-transform: uppercase;
+    }
+
+    .main-menu .main-nav > .active > a,.main-menu .main-nav > .active > a:hover,.main-menu .main-nav > .active > a:focus {
+        background: #e7e7e7;
+    }
+
+    .main-menu .main-nav > li > a:hover,.main-menu .main-nav > li > a:focus {
+        background: #e7e7e7;
+    }
+
+
+    .main-menu .main-nav li a img{
+        display:none
+    }
+
+    .masonry[data-columns]::before{
+        content: '1 .col-xs-12';
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .masonry[data-columns]::before{
+        content: '1 .col-xs-12';
+    }
+
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .masonry[data-columns]::before{
+        content: '2 .col-xs-6';
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .masonry[data-columns]::before{
+        content: '2 .col-xs-6';
+    }
+
+}
