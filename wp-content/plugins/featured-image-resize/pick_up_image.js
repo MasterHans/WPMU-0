@@ -11,7 +11,7 @@ jQuery(document).ready(function ($) {
         alert(4444);
     });
 
-    $('media-toolbar-primary').on('click', 'button.media-button-select', function (e) {
+    $('body').on('click', 'button.media-button-select', function (e) {
         alert(777);
     });
 
@@ -20,5 +20,22 @@ jQuery(document).ready(function ($) {
         alert(56565656);
     });
     //media-toolbar
+
+    wp.media.featuredImage.frame().on('open',function() {
+        // Clever JS here
+        alert(978987987987978);
+    });
+
+    wp.media.featuredImage.frame().on('open', function() {
+        // Get the actual modal
+        var modal = $(wp.media.featuredImage.frame().modal.el);
+        // Do stuff when clicking on a thumbnail in the modal
+        modal.on('click', '.attachment', function() {
+            // Stuff and thangs
+        })
+            // Trigger the click event on any thumbnails selected previously
+            .find('attachment.selected').trigger('click');
+    });
+
 
 });

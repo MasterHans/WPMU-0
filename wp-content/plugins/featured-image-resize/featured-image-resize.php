@@ -19,17 +19,23 @@ function load_custom_admin_js()
     }
 }
 
-add_action('admin_init', 'add_test_content');
-function add_test_content (){
-    echo '
-    <h1>TEST</h1>
-    <h1>TEST</h1>
-    <h1>TEST</h1>
-    <h1>TEST</h1>
-    <h1>TEST</h1>
-    <h1>TEST</h1>
-    <button type="button" class="button media-button button-primary button-large media-button-select" style="margin-left: 400px">Set featured image</button>
-
-
-    ';
-}
+//add_action('admin_init', 'add_test_content');
+//function add_test_content()
+//{
+//    echo '
+//    <h1>TEST</h1>
+//    <h1>TEST</h1>
+//    <h1>TEST</h1>
+//    <h1>TEST</h1>
+//    <h1>TEST</h1>
+//    <h1>TEST</h1>
+//    <div class="media-toolbar">
+//        <div class="media-toolbar-secondary"></div>
+//            <div class="media-toolbar-primary search-form">
+//                <button type="button" class="button media-button button-primary button-large media-button-select" style="margin-left: 400px">Set featured image</button>
+//            </div>
+//    </div>
+//
+//
+//    ';
+//}
