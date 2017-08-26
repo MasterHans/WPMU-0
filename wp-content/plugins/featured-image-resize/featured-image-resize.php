@@ -19,7 +19,7 @@ function load_custom_admin_js()
     }
 }
 
-//This hook works when the image has been selected in modal window and performed click on "Set featured image"
+//This hook fires up when the featured image had selected in modal windows and clicked "Set featured Image" button
 add_action('wp_ajax_resize_featured_image_on_fly', 'resize_featured_image_on_fly_callback');
 
 function resize_featured_image_on_fly_callback()
