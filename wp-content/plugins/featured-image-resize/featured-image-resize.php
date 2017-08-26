@@ -14,28 +14,24 @@ function load_custom_admin_js()
 {
     //js
     if (is_admin()) {
-        wp_register_script('pick_up_image_js', THIS_PLUGIN_CATALOG_DIR_URL . 'pick_up_image.js', array('jquery'), '1.0.1', true);
+        wp_register_script('pick_up_image_js', THIS_PLUGIN_CATALOG_DIR_URL . 'pick_up_image.js', array('jquery'), '1.0.2', true);
         wp_enqueue_script('pick_up_image_js');
     }
 }
 
-//add_action('admin_init', 'add_test_content');
-//function add_test_content()
-//{
-//    echo '
-//    <h1>TEST</h1>
-//    <h1>TEST</h1>
-//    <h1>TEST</h1>
-//    <h1>TEST</h1>
-//    <h1>TEST</h1>
-//    <h1>TEST</h1>
-//    <div class="media-toolbar">
-//        <div class="media-toolbar-secondary"></div>
-//            <div class="media-toolbar-primary search-form">
-//                <button type="button" class="button media-button button-primary button-large media-button-select" style="margin-left: 400px">Set featured image</button>
-//            </div>
-//    </div>
-//
-//
-//    ';
-//}
+//This hook works when the image has been selected in modal window and performed click on "Set featured image"
+add_action('wp_ajax_resize_featured_image_on_fly', 'resize_featured_image_on_fly_callback');
+
+function resize_featured_image_on_fly_callback()
+{
+    add_image_size( 'loop_thumbnail', 476, 249, true );
+    $attachment_id = $_POST['attachment_id'];
+    $filename = get_attached_file($attachment_id);
+
+    // Create new image size only for picked up featured image
+    $attach_data = wp_generate_attachment_metadata( $attachment_id, $filename );
+    wp_update_attachment_metadata( $attachment_id, $attach_data );
+
+    wp_die(); //exit to exclude everything extra
+}
+
