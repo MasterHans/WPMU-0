@@ -1,4 +1,4 @@
-<article>
+<article <?php post_class() ?> id="post-<?php the_ID();?>">
 
     <?php if (is_front_page() ) {
         return;

@@ -1,5 +1,7 @@
 <footer>
-	
+
+	<?php do_action( 'wpmu_before_footer' ); ?>
+
 	<div class="container">
 		
 		<aside class="footer first">
@@ -26,7 +28,9 @@
 		<?php endif; ?>
 		</aside>	
 		
-	</div>	
+	</div>
+
+	<?php do_action( 'wpmu_after_footer' ); ?>
 
 </footer>
 <?php wp_footer(); ?>

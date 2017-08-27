@@ -34,6 +34,9 @@
 /*
 !wp-content/
 
+# istall directory
+!wp-content/install/
+
 # ignore all files starting with .
 .*
 

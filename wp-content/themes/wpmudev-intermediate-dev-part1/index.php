@@ -1,18 +1,23 @@
 <?php get_header(); ?>
 
-<div class="container">
-	<div class="content">
-	<?php if ( have_posts()) :?>
-		<?php while (have_posts()) : the_post();?>
+    <div class="container">
+        <div class="content">
 
-			<?php get_template_part('loop')?>
+            <?php do_action('wpmu_before_content'); ?>
 
-		<?php endwhile; endif; ?>
+            <?php if (have_posts()) : ?>
+            <?php while (have_posts()) : the_post(); ?>
 
-	</div><!--.content-->
+                <?php get_template_part('loop') ?>
 
-<?php get_sidebar(); ?>
+            <?php endwhile; endif; ?>
 
-</div><!--.container-->
+            <?php do_action('wpmu_after_content'); ?>
+
+        </div><!--.content-->
+
+        <?php get_sidebar(); ?>
+
+    </div><!--.container-->
 
 <?php get_footer(); ?>

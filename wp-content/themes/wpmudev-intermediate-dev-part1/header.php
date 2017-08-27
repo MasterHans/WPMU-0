@@ -8,13 +8,17 @@
 
 <?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>">
+
+<?php do_action( 'wpmu_before_header' ); ?>
+
 <header>
 	<div class="header-left">
+		<?php echo apply_filters( 'wpmu_header_content', '
 		<div class="site-title">
-			<h1 class="site-name"><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</div><!--.site-title-->
+			<h1 class="site-name"><a href="' . get_bloginfo('url') . '" title="' . get_bloginfo('name') . '">' . get_bloginfo('name') . '</a></h1>
+			<h2 class="site-description">' . get_bloginfo( 'description' ) . '</h2>
+		</div><!--.site-title-->' ); ?>
 	</div><!--.header-left-->
 
 	<div class="header-right">
@@ -23,6 +27,8 @@
 		<?php endif; ?>
 	</div><!--header-right-->
 </header>
+
+<?php do_action( 'wpmu_after_header' ); ?>
 
 <nav class="main">
 	<?php wp_nav_menu( array(
