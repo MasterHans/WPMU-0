@@ -22,6 +22,9 @@
 	</div><!--.header-left-->
 
 	<div class="header-right">
+
+		<?php do_action( 'wpmu_in_header' ); ?>
+
 		<?php if ( is_active_sidebar( 'header-widget-area' ) ) : ?>
 			<?php dynamic_sidebar( 'header-widget-area' ); ?>
 		<?php endif; ?>

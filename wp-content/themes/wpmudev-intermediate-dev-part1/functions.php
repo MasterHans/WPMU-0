@@ -1,4 +1,9 @@
 <?php
+/**
+ * include the Customizer adjustments
+ */
+include get_stylesheet_directory() . '/includes/customizer.php';
+
 /**********************************************************************************
 wpmu_register_menus - register menus
 **********************************************************************************/
