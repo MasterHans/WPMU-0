@@ -34,9 +34,6 @@
 /*
 !wp-content/
 
-# istall directory
-!wp-content/install/
-
 # ignore all files starting with .
 .*
 
@@ -92,6 +89,8 @@ wp-content/*
 !wp-content/mu-plugins/
 !wp-content/plugins/
 !wp-content/themes/
+# install directory
+!wp-content/install/
 
 # ignore these plugins from the core
 wp-content/plugins/hello.php

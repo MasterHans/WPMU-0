@@ -49,6 +49,7 @@ function wpmu_customize_register($wp_customize)
 
         }
     }
+
     /**
      * Contact details
      */
@@ -150,28 +151,54 @@ function wpmu_customize_register($wp_customize)
      * load Logo
      */
     $wp_customize->add_setting('wpmu_logo_setting', array(
-        'default' => __('Your Logo', 'wpmu'),
-        'type' => 'radio'
+        'default' => __('Your Logo', 'wpmu')
     ));
     $wp_customize->add_control(
         new WP_Customize_Image_Control(
             $wp_customize,
             'logo',
             array(
-                'label'      => __( 'Upload a logo', 'theme_name' ),
-                'section'    => 'wpmu_logo',
-                'settings'   => 'wpmu_logo_setting',
-                'context'    => 'your_setting_context'
+                'label' => __('Upload a logo', 'theme_name'),
+                'section' => 'wpmu_logo',
+                'settings' => 'wpmu_logo_setting',
+                'context' => 'your_setting_context'
             )
         )
     );
+
+    /**
+     * Add Image styling
+     */
+
+    /**
+     * Float left Logo to Title
+     */
+    $wp_customize->add_setting('wpmu_title_float_left_setting', array(
+            'default' => 'none',
+        )
+    );
+
+    $wp_customize->add_control('wpmu_title_float_left_setting', array(
+            'label' => __('Title radio float Selection:', 'wpmu'),
+            'type' => 'radio',
+            'description' => __('This is a custom radio input.'),
+            'section' => 'wpmu_logo',
+            'settings' => 'wpmu_title_float_left_setting',
+            'choices' => array(
+                'none' => 'none',
+                'left' => 'left',
+            ),
+            'default' => 'none',
+        )
+    );
+
 
 }
 
 add_action('customize_register', 'wpmu_customize_register');
 
 /**********************************************************************
-Add controls / content to theme
+ * Add controls / content to theme
  **********************************************************************/
 function wpmu_display_contact_details_in_header()
 { ?>
@@ -200,20 +227,21 @@ add_action('wpmu_in_header', 'wpmu_display_contact_details_in_header');
 /**
  * Add logo to the theme
  */
-function wpmu_display_logoin_header() {
-?>
-    <?php $img_src = get_theme_mod('wpmu_logo_setting', 'WebSite Logo');?>
-    <?php if ( !empty($img_src) ):?>
+function wpmu_display_logoin_header()
+{
+    ?>
+    <?php $img_src = get_theme_mod('wpmu_logo_setting', 'WebSite Logo'); ?>
+    <?php if (!empty($img_src)): ?>
     <div class="logo">
         <img src="<?php echo $img_src; ?>" alt="" style="height: 50px;rodeon">
     </div>
-    <?php endif; ?>
+<?php endif; ?>
 <?php }
 
 add_action('wpmu_logo_in_header', 'wpmu_display_logoin_header');
 
 /*******************************************************************************
-add styling to theme - attaches to the wp_head hook
+ * add styling to theme - attaches to the wp_head hook
  ********************************************************************************/
 function wpmu_add_color_scheme()
 {
@@ -221,8 +249,9 @@ function wpmu_add_color_scheme()
     $color_scheme2 = get_option('wpmu_color2');
     $link_color1 = get_option('wpmu_links_color1');
     $link_color2 = get_option('wpmu_links_color2');
+    $title_float = get_option('wpmu_title_float_left_setting');
 
-?>
+    ?>
     <style>
         /* main color */
         .site-title a:link,
@@ -238,6 +267,7 @@ function wpmu_add_color_scheme()
         nav.main a:visited {
             color: <?php echo $color_scheme1; ?>;
         }
+
         footer {
             background: <?php echo $color_scheme1; ?>;
         }
@@ -262,6 +292,11 @@ function wpmu_add_color_scheme()
         .sidebar a:hover,
         .sidebar a:active {
             color: <?php echo $link_color2; ?>;
+        }
+
+        /*title float*/
+        .site-title {
+            float: <?php echo get_theme_mod('wpmu_title_float_left_setting'); ?>;
         }
 
     </style>
