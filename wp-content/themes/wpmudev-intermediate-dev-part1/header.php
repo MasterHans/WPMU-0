@@ -19,6 +19,7 @@
 			<h1 class="site-name"><a href="' . get_bloginfo('url') . '" title="' . get_bloginfo('name') . '">' . get_bloginfo('name') . '</a></h1>
 			<h2 class="site-description">' . get_bloginfo( 'description' ) . '</h2>
 		</div><!--.site-title-->' ); ?>
+		<?php do_action( 'wpmu_logo_in_header' ); ?>
 	</div><!--.header-left-->
 
 	<div class="header-right">

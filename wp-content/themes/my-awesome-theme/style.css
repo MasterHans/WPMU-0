@@ -1,0 +1,102 @@
+/*
+Theme Name: AwesomeTheme
+Theme URI: https://masterhans.ru/
+Author: Alexander Suvorov
+Author URI: https://masterhans.ru/
+Description: Theme for some WordPress studies
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: my-awesome-theme
+Tags: test WordPress
+*/
+
+html {
+    height: 100%;
+    background: #444;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5em;
+}
+
+#site-header {
+    text-align: center;
+}
+
+#site-header > h1 > a{
+    color: #FFF;
+    text-decoration: none;
+}
+
+#site-header > h1 > a:hover{
+    color: #00A8EF;
+}
+
+#site-header h1 {
+    font-size: 32px;
+    color: #ffffff;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+#site-content {
+    max-width: 1000px;
+    background: #fff;
+    margin: 0 auto;
+    padding: 22px;
+    border-radius: 5px;
+
+}
+
+#site-footer {
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+#site-sidebar {
+    width: 350px;
+    border: 22px;
+    float: left;
+    border-radius: 5px;
+    background: #fff;
+    padding: 10px;
+}
+
+#site-sidebar > li, #site-sidebar > ul {
+    list-style-type: none;
+}
+
+#header-menu {
+    text-align: center;
+}
+
+#header-menu ul {
+    padding: 0px;
+}
+
+#header-menu li {
+    display: inline-block;
+    padding: 0 8px;
+}
+
+#header-menu a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+#header-menu a:hover {
+    color: #fff;
+}
+
+.featured-image{
+    float: left;
+    /*margin-right: 20px;*/
+    padding-right:22px;
+    padding-top: 10px;
+}
+
+#post-content {
+    display: block;
+    overflow: hidden;
+}

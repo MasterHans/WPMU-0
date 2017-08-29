@@ -23,6 +23,11 @@ function wpmu_customize_register($wp_customize)
         'title' => __('Color Scheme', 'wpmu')
     ));
 
+    // section for Logo
+    $wp_customize->add_section('wpmu_logo', array(
+        'title' => __('Website Logo', 'wpmu')
+    ));
+
     /********************
      * Define generic controls
      *********************/
@@ -44,11 +49,11 @@ function wpmu_customize_register($wp_customize)
 
         }
     }
-
     /**
      * Contact details
      */
-
+    //settings
+    // address
     $wp_customize->add_setting('wpmu_address_setting', array(
         'default' => __('Your address', 'wpmu')
     ));
@@ -61,7 +66,7 @@ function wpmu_customize_register($wp_customize)
             'settings' => 'wpmu_address_setting'
         )));
 
-
+    //telephone
     $wp_customize->add_setting('wpmu_telephone_setting', array(
         'default' => __('Your telephone number', 'wpmu')
     ));
@@ -74,6 +79,7 @@ function wpmu_customize_register($wp_customize)
             'settings' => 'wpmu_telephone_setting'
         )));
 
+    //email
     $wp_customize->add_setting('wpmu_email_setting', array(
         'default' => __('Your email address', 'wpmu')
     ));
@@ -138,10 +144,35 @@ function wpmu_customize_register($wp_customize)
             )
         ));
     }
+
+    /**
+     * Media upload
+     * load Logo
+     */
+    $wp_customize->add_setting('wpmu_logo_setting', array(
+        'default' => __('Your Logo', 'wpmu'),
+        'type' => 'radio'
+    ));
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'logo',
+            array(
+                'label'      => __( 'Upload a logo', 'theme_name' ),
+                'section'    => 'wpmu_logo',
+                'settings'   => 'wpmu_logo_setting',
+                'context'    => 'your_setting_context'
+            )
+        )
+    );
+
 }
 
 add_action('customize_register', 'wpmu_customize_register');
 
+/**********************************************************************
+Add controls / content to theme
+ **********************************************************************/
 function wpmu_display_contact_details_in_header()
 { ?>
     <address>
@@ -166,6 +197,24 @@ function wpmu_display_contact_details_in_header()
 
 add_action('wpmu_in_header', 'wpmu_display_contact_details_in_header');
 
+/**
+ * Add logo to the theme
+ */
+function wpmu_display_logoin_header() {
+?>
+    <?php $img_src = get_theme_mod('wpmu_logo_setting', 'WebSite Logo');?>
+    <?php if ( !empty($img_src) ):?>
+    <div class="logo">
+        <img src="<?php echo $img_src; ?>" alt="" style="height: 50px;rodeon">
+    </div>
+    <?php endif; ?>
+<?php }
+
+add_action('wpmu_logo_in_header', 'wpmu_display_logoin_header');
+
+/*******************************************************************************
+add styling to theme - attaches to the wp_head hook
+ ********************************************************************************/
 function wpmu_add_color_scheme()
 {
     $color_scheme1 = get_option('wpmu_color1');
