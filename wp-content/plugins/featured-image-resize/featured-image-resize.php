@@ -25,7 +25,7 @@ add_action('wp_ajax_resize_featured_image_on_fly', 'resize_featured_image_on_fly
 function resize_featured_image_on_fly_callback()
 {
     add_image_size( 'loop_thumbnail', 476, 249, true );
-    $attachment_id = $_POST['attachment_id'];
+    $attachment_id4 = $_POST['attachment_id'];
     $filename = get_attached_file($attachment_id);
 
     // Create new image size only for picked up featured image

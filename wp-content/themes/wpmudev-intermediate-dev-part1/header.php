@@ -14,12 +14,13 @@
 
 <header>
 	<div class="header-left">
+		<?php do_action( 'wpmu_logo_before_header' ); ?>
 		<?php echo apply_filters( 'wpmu_header_content', '
 		<div class="site-title">
 			<h1 class="site-name"><a href="' . get_bloginfo('url') . '" title="' . get_bloginfo('name') . '">' . get_bloginfo('name') . '</a></h1>
 			<h2 class="site-description">' . get_bloginfo( 'description' ) . '</h2>
 		</div><!--.site-title-->' ); ?>
-		<?php do_action( 'wpmu_logo_in_header' ); ?>
+		<?php do_action( 'wpmu_logo_after_header' ); ?>
 	</div><!--.header-left-->
 
 	<div class="header-right">
