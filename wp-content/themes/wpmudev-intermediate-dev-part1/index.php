@@ -6,15 +6,16 @@
             <?php do_action('wpmu_before_content'); ?>
 
             <?php if (have_posts()) : ?>
-            <?php while (have_posts()) : the_post(); ?>
+                <?php while (have_posts()) : the_post(); ?>
 
-                <?php get_template_part('loop') ?>
+                    <?php get_template_part('loop') ?>
 
-            <?php endwhile; endif; ?>
+                <?php endwhile; endif; ?>
 
             <?php do_action('wpmu_after_content'); ?>
 
-        </div><!--.content-->
+        </div>
+        <!--.content-->
 
         <?php get_sidebar(); ?>
 
