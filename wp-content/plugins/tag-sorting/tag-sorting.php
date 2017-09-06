@@ -35,8 +35,11 @@ function sag_tag_add_custom_field_to_adding_interface($tag)
     ?>
     <div class="form-field term-sorting-hat-wrap">
         <label for="tag_meta[sorting_hat]">Sorting Hat</label>
-        <input name="tag_meta[sorting_hat]" id="tag_meta[sorting_hat]" type="number" value="<?php echo $tag_meta['sorting_hat'] ? $tag_meta['sorting_hat'] : ''; ?>" size="40">
-        <p>This field define the sorting order of the tags. If it empty or similar to exist key in other tag the order will return to default.</p>
+        <input name="tag_meta[sorting_hat]" id="tag_meta[sorting_hat]" type="number"
+               value="<?php echo $tag_meta['sorting_hat'] ? $tag_meta['sorting_hat'] : ''; ?>" size="40">
+
+        <p>This field define the sorting order of the tags. If it empty or similar to exist key in other tag the order
+            will return to default.</p>
     </div>
 <?php }
 
@@ -52,14 +55,17 @@ function sag_tag_add_custom_field_to_editing_interface($tag)
     ?>
     <tr class="form-field term-sorting-hat-wrap">
         <th scope="row"><label for="tag_meta[sorting_hat]">Sorting Hat</label></th>
-        <td><input name="tag_meta[sorting_hat]" id="tag_meta[sorting_hat]" type="number" value="<?php echo $tag_meta['sorting_hat'] ? $tag_meta['sorting_hat'] : ''; ?>" size="40">
-            <p class="description">This field define the sorting order of the tags. If it empty or similar to exist key in other tag the order will return to default.</p></td>
+        <td><input name="tag_meta[sorting_hat]" id="tag_meta[sorting_hat]" type="number"
+                   value="<?php echo $tag_meta['sorting_hat'] ? $tag_meta['sorting_hat'] : ''; ?>" size="40">
+
+            <p class="description">This field define the sorting order of the tags. If it empty or similar to exist key
+                in other tag the order will return to default.</p></td>
     </tr>
 
 <?php }
 
-add_action('edited_terms','sag_tag_custom_fields_save');
-add_action('create_term','sag_tag_custom_fields_save');
+add_action('edited_terms', 'sag_tag_custom_fields_save');
+add_action('create_term', 'sag_tag_custom_fields_save');
 /**
  * save tag meta data to WP option
  * @param $term_id
@@ -85,8 +91,9 @@ function sag_tag_custom_fields_save($term_id)
  * Add custom column to in WordPress Manage Screen for TAGS
  */
 add_filter('manage_edit-post_tag_columns', 'sag_tag_columns_head');
-function sag_tag_columns_head($defaults) {
-    $defaults['sorting_hat_column']  = 'Sorting Hat';
+function sag_tag_columns_head($defaults)
+{
+    $defaults['sorting_hat_column'] = 'Sorting Hat';
 
     /* ADD ANOTHER COLUMN (OPTIONAL) */
     // $defaults['second_column'] = 'Second Column';
@@ -101,11 +108,12 @@ function sag_tag_columns_head($defaults) {
 }
 
 add_filter('manage_post_tag_custom_column', 'sag_tag_columns_content', 10, 3);
-function sag_tag_columns_content($c, $column_name, $term_id) {
+function sag_tag_columns_content($c, $column_name, $term_id)
+{
     //get meta value keeped in wp option in tag_ plus tag id
     $tag_meta = get_option("tag_$term_id");
     if ($column_name == 'sorting_hat_column') {
-        echo $tag_meta['sorting_hat'];
+        echo intval($tag_meta['sorting_hat']);
     }
 }
 
@@ -115,29 +123,31 @@ function sag_tag_columns_content($c, $column_name, $term_id) {
  * for custom tags fields WordPress need to understand how to sort column
  * this is not working
  */
-//add_filter( 'manage_edit-post_tag_sortable_columns', 'sag_sortable_post_tag_column' );
-//function sag_sortable_post_tag_column( $columns ) {
-//    $columns['sorting_hat_column'] = 'sorting_hat_column';
-//
-//    //To make a column 'un-sortable' remove it from the array
-//    //unset($columns['date']);
-//
-//    return $columns;
-//}
+add_filter('manage_edit-post_tag_sortable_columns', 'sag_sortable_post_tag_column');
+function sag_sortable_post_tag_column($columns)
+{
+    $columns['sorting_hat_column'] = 'sorting_hat_column';
+
+    //To make a column 'un-sortable' remove it from the array
+    //unset($columns['date']);
+
+    return $columns;
+}
 
 // Called in front-end via the_tags() or related variations of.
 add_filter('get_the_terms', function ($terms, $post_id, $taxonomy) {
     if ($taxonomy != 'post_tag' || !$terms) {
         return $terms;
     }
-//    var_dump($terms);
     //define the empty array for custom sorting tags
     $sorting_terms = [];
 
     foreach ($terms as $term_id => $term) {
         //get meta value kept in wp option in tag_ plus tag id
         $tag_id = $term->term_id;
-        $key_to_sort = get_option("tag_$tag_id")['sorting_hat'];
+
+        $key_to_sort = intval(get_option("tag_$tag_id")['sorting_hat']);
+
         if (!empty($key_to_sort) && !sag_is_key_exists($key_to_sort, $sorting_terms)) {
             //define new key according to new custom sorting order
             $sorting_terms [$key_to_sort] = $term;
@@ -150,7 +160,9 @@ add_filter('get_the_terms', function ($terms, $post_id, $taxonomy) {
     ksort($sorting_terms);
 
     if (!empty($sorting_terms)) {
+//        var_dump($sorting_terms);
         return $sorting_terms;
+
     } else {
         return $terms;
     }
