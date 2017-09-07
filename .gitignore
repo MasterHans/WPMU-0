@@ -96,6 +96,7 @@ wp-content/*
 wp-content/plugins/hello.php
 wp-content/plugins/akismet/
 wp-content/plugins/woocommerce/
+wp-content/plugins/woocommerce-services/
 wp-content/plugins/edge-cpt/
 wp-content/plugins/edge-instagram-feed/
 wp-content/plugins/edit-flow/
