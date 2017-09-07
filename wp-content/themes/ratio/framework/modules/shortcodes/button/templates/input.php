@@ -1,1 +1,0 @@
-<input type="submit" name="<?php echo esc_attr($input_name); ?>" value="<?php echo esc_attr($text); ?>" <?php ratio_edge_inline_style(array_merge($button_styles,$button_background_styles)); ?> <?php ratio_edge_class_attribute($button_classes); ?> <?php echo ratio_edge_get_inline_attrs($button_data); ?> <?php echo ratio_edge_get_inline_attrs($button_custom_attrs); ?> />
