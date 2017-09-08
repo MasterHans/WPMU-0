@@ -7,3 +7,6 @@ function ratio_edge_child_enqueue_style() {
 	wp_enqueue_style( 'childstyle' );
 }
 add_action( 'wp_enqueue_scripts', 'ratio_edge_child_enqueue_style', 11);
+
+/*include the function for related posts displaying*/
+require_once get_stylesheet_directory() . '/includes/sag-edgtf-related-posts.php';

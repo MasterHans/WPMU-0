@@ -8,3 +8,7 @@ Version: 1.0.0
 Template: ratio
 */
 @import url("../ratio/style.css");
+
+pre {
+    font-size: 12px;
+}
