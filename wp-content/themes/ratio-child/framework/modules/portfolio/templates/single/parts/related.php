@@ -1,5 +1,5 @@
 <div class="edgtf-portfolio-list-holder-outer edgtf-portfolio-related-holder edgtf-ptf-standard edgtf-hover-outline edgtf-ptf-three-columns clearfix">
-    <h1>TESTTTTTT</h1>
+<!--    <h1>TESTTTTTT</h1>-->
     <h2><?php esc_html_e('Related', 'ratio'); ?></h2>
     <div class="edgtf-portfolio-list-holder clearfix">
         <?php
@@ -8,6 +8,7 @@
             if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
                 <?php if (has_post_thumbnail()) {
                     $id = get_the_ID();
+//                    var_dump($id);
                     $item_link = get_permalink($id);
                     if (get_post_meta($id, 'portfolio_external_link', true) !== '') {
                         $item_link = get_post_meta($id, 'portfolio_external_link', true);

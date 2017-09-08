@@ -152,18 +152,32 @@ if (!function_exists('sag_ratio_edge_get_related_custom_post_type_by_param')) {
                         ),
                     )
                 ];
+
                 $related_posts = get_posts($related_args);
-var_dump($related_posts);
+
                 foreach ($related_posts as $related_post) {
-                    $sorted_ids[] = $related_post->ID;
+                    if (!in_array($related_post->ID, $sorted_ids)){
+                        $sorted_ids[] = $related_post->ID;
+                    }
                 }
             }
+//Debug
+//                    foreach ($sorted_ids as $sorted_id){
+//                        var_dump($sorted_id);
+//                        $tags_cur = wp_get_object_terms($sorted_id, 'portfolio-tag');
+//                        foreach ($tags_cur as $tag_cur) {
+//                            var_dump($tag_cur->name);
+//                        };
+//                    }
+
+//var_dump($sorted_ids);
+
             $args = array(
-                'order' => 'ASC',
-                'orderby' => 'post__in',
                 'post__in' => $sorted_ids,
+                'orderby' => 'post__in',
+                'post_type' => 'portfolio-item',
                 'posts_per_page' => $posts_per_page,
-                'taxonomy' => $taxonomy,
+
             );
 
         } else {
@@ -183,8 +197,10 @@ var_dump($related_posts);
 
         }
 
-        $related_by_taxonomy = new WP_Query($args);
 
+
+        $related_by_taxonomy = new WP_Query($args);
+//        var_dump($related_by_taxonomy);
         return $related_by_taxonomy;
 
     }
