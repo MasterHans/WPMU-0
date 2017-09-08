@@ -1,5 +1,4 @@
 <div class="edgtf-portfolio-list-holder-outer edgtf-portfolio-related-holder edgtf-ptf-standard edgtf-hover-outline edgtf-ptf-three-columns clearfix">
-<!--    <h1>TESTTTTTT</h1>-->
     <h2><?php esc_html_e('Related', 'ratio'); ?></h2>
     <div class="edgtf-portfolio-list-holder clearfix">
         <?php
@@ -8,15 +7,13 @@
             if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
                 <?php if (has_post_thumbnail()) {
                     $id = get_the_ID();
-//                    var_dump($id);
                     $item_link = get_permalink($id);
                     if (get_post_meta($id, 'portfolio_external_link', true) !== '') {
                         $item_link = get_post_meta($id, 'portfolio_external_link', true);
                     }
 
                     $categories = wp_get_post_terms($id, 'portfolio-category');
-
-                    $tags = wp_get_post_terms($id, 'portfolio-tag');
+//                    $tags = wp_get_post_terms($id, 'portfolio-tag');
 
                     $category_html = '';
                     $k = 1;
@@ -28,15 +25,15 @@
                         $k++;
                     }
 
-                    $tag_html = '';
-                    $k = 1;
-                    foreach ($tags as $tag) {
-                        $tag_html .= '<span>' . $tag->name . '</span>';
-                        if (count($tags) != $k) {
-                            $tag_html .= ' / ';
-                        }
-                        $k++;
-                    }
+//                    $tag_html = '';
+//                    $k = 1;
+//                    foreach ($tags as $tag) {
+//                        $tag_html .= '<span>' . $tag->name . '</span>';
+//                        if (count($tags) != $k) {
+//                            $tag_html .= ' / ';
+//                        }
+//                        $k++;
+//                    }
 
 
                     ?>
@@ -54,12 +51,12 @@
 							<h4 class="edgtf-item-title">
 								<a href="<?php echo esc_url($item_link); ?>">
 									<?php echo esc_attr(get_the_title()); ?>
-								</a>	
+								</a>
 							</h4>
 							<h6 class="edgtf-ptf-category-holder">
 								<?php
-//								print $category_html;
-								print $tag_html;
+								print $category_html;
+//								print $tag_html;
 								?>
 							</h6>
 						</div>
