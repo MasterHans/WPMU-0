@@ -1,4 +1,4 @@
-.shortcode.cta {
+.cta-in-post {
     clear: both;
     width: 25em;
     max-width: 50%;
@@ -11,16 +11,14 @@
     background-color: #222;
     color: #fff;
 }
+
 .cta a:link,
 .cta a:visited {
     text-decoration: none;
 }
+
 .cta a:hover,
 .cta a:active {
     text-decoration: underline;
 }
 
-.sidebar .shortcode.cta {
-    max-width:100%;
-    padding:5px;
-}

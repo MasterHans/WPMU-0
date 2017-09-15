@@ -63,7 +63,7 @@ class Wpmu_Cta_Widget extends WP_Widget {
         $tel = $instance['tel'];
         $email = $instance['email'];
         ?>
-        <div class="cta">
+        <div class="shortcode cta">
             <?php if ( ! empty( $title ) ) {
                 echo $args['before_title'] . $title . $args['after_title'];
 		}; ?>

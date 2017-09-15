@@ -373,6 +373,56 @@ function wpmu_customize_register($wp_customize)
             'none' => __('None', 'wpmu'),
         ),
     ));
+
+
+    //Adds the call to action box to the content of singular page or post or archive
+    //phone
+    $wp_customize->add_setting('wpmu_cta_content_phone_setting', array(
+            'default' => 'Your phone number',
+        )
+    );
+
+    $wp_customize->add_control(new WP_Customize_Control(
+        $wp_customize,
+        'wpmu_cta_content_phone_setting',
+        array(
+            'type' => 'text',
+            'label' => __('Phone for CTA box after content:', 'wpmu'),
+            'section' => 'wpmu_call_to_action_text',
+            'settings' => 'wpmu_cta_content_phone_setting'
+        )));
+    //email
+    $wp_customize->add_setting('wpmu_cta_content_email_setting', array(
+            'default' => 'Your email',
+        )
+    );
+
+    $wp_customize->add_control(new WP_Customize_Control(
+        $wp_customize,
+        'wpmu_cta_content_email_setting',
+        array(
+            'type' => 'text',
+            'label' => __('Email for CTA box after content:', 'wpmu'),
+            'section' => 'wpmu_call_to_action_text',
+            'settings' => 'wpmu_cta_content_email_setting'
+        )));
+    //settings to choose where CTA will appear
+    //radio button  for call to action button
+    $wp_customize->add_setting('position_cta_box_content_settings', array(
+        'default' => 'none',
+    ));
+
+    $wp_customize->add_control('position_cta_box_content_settings', array(
+        'label' => __('CTA box position:', 'wpmu'),
+        'section' => 'wpmu_call_to_action_text',
+        'type' => 'radio',
+        'description' => __('Please choose position of CTA box after the content.', 'wpmu'),
+        'choices' => array(
+            'page' => __('On Pages', 'wpmu'),
+            'post' => __('On Posts', 'wpmu'),
+            'none' => __('None', 'wpmu'),
+        ),
+    ));
 }
 
 add_action('customize_register', 'wpmu_customize_register');
@@ -619,6 +669,25 @@ function wpmu_add_call_to_action_befor_content()
 add_action('wp_head', 'wpmu_add_color_scheme');
 
 /**
+ * Hook function with CTA appearance after content
+ */
+
+function wpmu_cta_box_after_content () {
+?>
+    <?php if ((get_theme_mod('position_cta_box_content_settings') === 'post' && is_single()) or (get_theme_mod('position_cta_box_content_settings') === 'page' && is_page())):?>
+    <div class="cta_box_after_content">
+
+        Call us on <?php echo get_theme_mod('wpmu_cta_content_phone_setting') ?> or email <a href="<?php echo get_theme_mod('wpmu_cta_content_email_setting') ?>"><?php echo get_theme_mod('wpmu_cta_content_email_setting') ?></a>
+
+    </div>
+    <?php endif; ?>
+
+<?php
+}
+
+add_action('wpmu_after_content', 'wpmu_cta_box_after_content');
+
+/**
  * Add column class to body
  */
 
@@ -689,3 +758,45 @@ function wpmu_add_layout_scheme()
 <?php }
 
 add_action('wp_head', 'wpmu_add_layout_scheme');
+
+
+/*******************************************************************************
+ * add styling to call to action box after content
+ ********************************************************************************/
+function wpmu_add_cta_scheme()
+{
+    ?>
+    <style>
+        .cta_box_after_content {
+            clear: both;
+            width: 25em;
+            max-width: 100%;
+            margin: 10px 0;
+            padding: 15px 5% 3px 5%;
+            font: arial, sans-serif;
+            font-size: 1.4rem;
+            text-align: center;
+            line-height: 1.8rem;
+            background-color: #222;
+            color: #fff;
+        }
+        .cta a:link,
+        .cta a:visited {
+            text-decoration: none;
+        }
+        .cta a:hover,
+        .cta a:active {
+            text-decoration: underline;
+        }
+
+        .sidebar .cta_box_after_content {
+            max-width:100%;
+            padding:5px;
+        }
+
+
+    </style>
+
+<?php }
+
+add_action('wp_head', 'wpmu_add_cta_scheme');
