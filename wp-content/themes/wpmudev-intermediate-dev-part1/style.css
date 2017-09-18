@@ -88,7 +88,7 @@ header, .container, sidebar {
 /* navigation layout*/
 nav.main {
  	background: #3394bf;
- 	overflow: auto;
+ 	overflow: none;
 	text-align: center;
 	clear: both;
 	height: 3rem;
@@ -218,7 +218,7 @@ body {
 a:link,
 a:visited {
 	color: #3394bf;
-	text-decoration; underline;
+	text-decoration: underline;
 }
 a:active,
 a:hover {

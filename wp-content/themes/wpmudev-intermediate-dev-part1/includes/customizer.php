@@ -564,7 +564,7 @@ function wpmu_add_call_to_action_befor_content()
     */
     ?>
     <style>
-        /* main color */
+        /* main color Customizer */
         .site-title a:link,
         .site-title a:visited,
         .site-description,

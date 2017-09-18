@@ -8,6 +8,9 @@
     <?php } ?>
 
     <div class="entry-content">
+        <a href="<?php the_permalink(); ?>">
+            <?php the_post_thumbnail( 'large' ); ?>
+        </a>
         <?php the_content('<p class="left"></p>');?>
     </div><!--.entry-content-->
 
