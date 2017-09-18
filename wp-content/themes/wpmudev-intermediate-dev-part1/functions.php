@@ -74,4 +74,25 @@ function wpmu_widgets_init() {
 		);
 }
 add_action('init', 'wpmu_widgets_init');
+
+/**********************************************************************************
+wpmu_theme_support - adds theme support for post formats, post thumbnails, HTML5 and automatic feed links
+ **********************************************************************************/
+function wpmu_theme_support() {
+
+	/* post formats */
+	add_theme_support( 'post-formats', array( 'aside', 'quote' ) );
+
+	/* post thumbnails */
+	add_theme_support( 'post-thumbnails', array( 'post', 'page', 'project') );
+
+	/* HTML5 */
+	add_theme_support( 'html5' );
+
+	/* automatic feed links */
+	add_theme_support( 'automatic-feed-links' );
+
+}
+add_action( 'after_setup_theme', 'wpmu_theme_support' );
+
 ?>
