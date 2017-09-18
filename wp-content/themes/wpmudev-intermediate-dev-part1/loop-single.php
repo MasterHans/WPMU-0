@@ -13,6 +13,10 @@
         </a>
         <?php the_content('<p class="left"></p>');?>
     </div><!--.entry-content-->
-
+    <?php if( is_singular( 'project' ) ) { ?>
+        <div class="entry-meta">
+            <?php the_terms( $post->ID, 'service', 'Services: ', ', ' ); ?>
+        </div>
+    <?php } ?>
 </article>
 

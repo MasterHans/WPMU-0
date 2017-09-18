@@ -4,6 +4,9 @@
         <a href="<?php the_permalink(); ?>">
             <?php the_post_thumbnail( 'large' ); ?>
         </a>
-        <?php the_excerpt('<p class="left"></p>');?>
+        <?php the_content('<p class="left"></p>');?>
     </div><!--.entry-content-->
+    <div class="entry-meta">
+        <?php the_terms( $post->ID, 'service', 'Services: ', ', ' ); ?>
+    </div>
 </article>

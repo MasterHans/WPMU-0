@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<h1>Archive:</h1>
 <div class="container">
 	<div class="content">
 	<?php if ( have_posts()) :?>

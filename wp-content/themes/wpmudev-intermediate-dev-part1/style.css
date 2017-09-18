@@ -107,6 +107,12 @@ footer .widget {
 	border-top: 1px solid #fff;
 }
 
+/* content */
+.entry-meta {
+	margin: 1em 0;
+	padding: 1em;
+}
+
 
 /* ------- 3. Universal elements ------- */
 
@@ -275,6 +281,20 @@ h6 {
 }
 .site-title {
 	line-height: 1.6rem;
+}
+/* Content */
+.entry-meta {
+	background: #3394bf;
+	color: #fff;
+}
+.entry-meta a:link,
+.entry-meta a:visited {
+	color: #fff;
+}
+.entry-meta a:hover,
+.entry-meta a:active {
+	color: #fff;
+	text-decoration: none;
 }
 
 /* Widgets */
