@@ -91,6 +91,7 @@ wp-content/*
 !wp-content/themes/
 # install directory
 !wp-content/install/
+!wp-content/uploads/
 
 # ignore these plugins from the core
 wp-content/plugins/hello.php
