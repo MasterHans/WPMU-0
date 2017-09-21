@@ -93,6 +93,11 @@ nav.main {
 	clear: both;
 	height: 3rem;
 }
+
+.content article {
+	margin: 1em 0;
+}
+
 /* sidebar widget areas*/
 .sidebar .widget {
 	padding: 10px 0;
