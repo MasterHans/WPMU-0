@@ -25,7 +25,7 @@ class Wpmu_Cta_Widget extends WP_Widget {
             'classname' => 'wpmu_cta_widget',
             'description' => 'Add a Call to Action box encouraging people to get in touch.'
         );
-        parent::__construct( 'wpmu_cta_widget', 'Call to Action', $widget_options );
+        parent::__construct( 'wpmu_cta_widget', __('Call to Action', 'wpmu'), $widget_options );
     }
     function form( $instance ) {
         $title = ! empty( $instance['title'] ) ? $instance['title'] : '';
@@ -33,17 +33,17 @@ class Wpmu_Cta_Widget extends WP_Widget {
         $email = ! empty( $instance['email'] ) ? $instance['email'] : 'Email address';
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id( 'title' ); ?>">Title:</label>
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', 'wpmu'); ?></label>
             <input class="widefat" type ="text" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $title ); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'tel' ); ?>">Your telephone number:</label>
+            <label for="<?php echo $this->get_field_id( 'tel' ); ?>"><?php _e('Your telephone number:', 'wpmu'); ?></label>
             <input class="widefat" rows="10" type="text" id="<?php echo $this->get_field_id( 'tel' ); ?>" name="<?php echo $this->get_field_name( 'tel' ); ?>" value="<?php echo esc_attr( $tel ); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'email' ); ?>">Your email address:</label>
+            <label for="<?php echo $this->get_field_id( 'email' ); ?>"><?php _e('Your email address:', 'wpmu'); ?></label>
             <input class="widefat" rows="10" type="text" id="<?php echo $this->get_field_id( 'email' ); ?>" name="<?php echo $this->get_field_name( 'email' ); ?>" value="<?php echo esc_attr( $email ); ?>" />
         </p>
 
@@ -67,7 +67,7 @@ class Wpmu_Cta_Widget extends WP_Widget {
             <?php if ( ! empty( $title ) ) {
                 echo $args['before_title'] . $title . $args['after_title'];
 		}; ?>
-            <?php echo 'Call us on ' . $tel . ' or email <a href="' . $email . '">' . $email . '</a>'; ?>
+            <?php printf( __( 'Call us on %1$s or email <a href="%2$s">%2$s</a>', 'wpmu' ), $tel, $email ); ?>
         </div>
 
         <?php echo $args['after_widget'];

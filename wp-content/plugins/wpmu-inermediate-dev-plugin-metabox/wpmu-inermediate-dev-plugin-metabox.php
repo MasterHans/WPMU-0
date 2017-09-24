@@ -11,7 +11,7 @@
  * Adds metabox to admin screen
  */
 function wpmu_add_post_metabox() {
-    add_meta_box( 'wpmu_metabox', 'Add More', 'wpmu_metabox_callback', 'post', 'normal', 'high' );
+    add_meta_box( 'wpmu_metabox', __('Add More', 'wpmu'), 'wpmu_metabox_callback', 'post', 'normal', 'high' );
 }
 add_action( 'add_meta_boxes', 'wpmu_add_post_metabox' );
 
@@ -23,7 +23,7 @@ function wpmu_metabox_callback( $post ) { ?>
 		//retrieve metadata value if it exists
 		$weather = get_post_meta( $post->ID, 'wpmu_weather', true ); ?>
 
-		<label for "wpmu_metadata_weather">Today's Weather</label>
+		<label for "wpmu_metadata_weather"><?php _e('Today&#39;s Weather','wpmu');?></label>
 		<input type="text" name="wpmu_metadata_weather" value=<?php echo esc_attr( $weather ); ?>>
 
 <?php }
@@ -57,7 +57,7 @@ function wpmu_display_postmeta() {
 
 		<div class="entry-meta">
 			<ul class="post-meta">
-				<li><span class="post-meta-key">Today's Weather:</span> <?php echo $weather; ?></li>
+				<li><span class="post-meta-key"><?php _e('Today&#39;s Weather:','wpmu');?></span> <?php echo $weather; ?></li>
 			</ul>
 		</div>
 

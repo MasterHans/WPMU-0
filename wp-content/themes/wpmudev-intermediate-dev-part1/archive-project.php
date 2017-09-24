@@ -3,7 +3,7 @@
         <div class="content">
             <?php if ( have_posts()) :?>
 
-                <h1><?php echo apply_filters( 'project_archive_title', 'Our Favorite Projects' ); ?></h1>
+                <h1><?php echo apply_filters( 'project_archive_title', __('Our Favorite Projects','wpmu') ); ?></h1>
 
                 <?php while (have_posts()) : the_post();?>
 

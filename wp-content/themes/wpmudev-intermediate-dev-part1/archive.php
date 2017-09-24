@@ -7,7 +7,7 @@
 
 		<h1>
 			<?php
-			echo 'Archive for ';
+			_e('Archive for ', 'wpmu');
 			// echo out correct title depending on archive type
 			if ( is_day() ) {
 				echo the_time('F jS, Y');

@@ -1,5 +1,5 @@
 <article <?php post_class() ?> id="post-<?php the_ID();?>">
-    <h2 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title();?></a></h2>
+    <h2 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(esc_attr__('Permanent Link to %s', 'wpmu'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h2>
     <div class="entry-content">
         <a href="<?php the_permalink(); ?>">
             <?php the_post_thumbnail( 'large' ); ?>
@@ -7,6 +7,12 @@
         <?php the_content('<p class="left"></p>');?>
     </div><!--.entry-content-->
     <div class="entry-meta">
-        <?php the_terms( $post->ID, 'service', 'Services: ', ', ' ); ?>
+        <?php
+        $terms = get_the_terms( $post->ID, 'service' );
+        if ( $terms ) {
+            _e( 'Services', 'wpmu' );
+            the_terms( $post->ID, 'service', ': ', ', ' );
+        }
+        ?>
     </div>
 </article>

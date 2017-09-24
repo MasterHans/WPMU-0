@@ -3,7 +3,7 @@
     <div class="container">
         <div class="content">
 
-            <h1>404 - Page Not Found!!</h1>
+            <h1><?php _e('404 - Page Not Found!!')?></h1>
 
         </div>
         <!--.content-->

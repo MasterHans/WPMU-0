@@ -65,10 +65,10 @@ function wpmu_latest_project()
 
     //Use a conditional tag to only run the query on Pages or the main blog page, for example.
     //TODO No logic - If the main Blog is page it is actually already  "Pages"
-    if (is_page()) {
+//    if (is_page()) {
         // run the query
         $query = new WP_query ($args);
-//    var_dump($query);
+
         // check the query returns posts
         if ($query->have_posts()) { ?>
 
@@ -77,7 +77,7 @@ function wpmu_latest_project()
                 <?php while ($query->have_posts()) : $query->the_post(); ?>
 
                     <?php //contents of loop ?>
-                    <h3>Latest Project - <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                    <h3><?php _e('Latest Project - ','wpmu')?><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                     <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>
                     <?php the_excerpt(); ?>
 
@@ -88,9 +88,9 @@ function wpmu_latest_project()
                     <a href="<?php the_permalink(); ?>">Read More</a>
                 </div>
             </section>
-            }
+
         <?php }
-    }
+//    };
 }
 
 add_action('wpmu_after_sidebar', 'wpmu_latest_project');

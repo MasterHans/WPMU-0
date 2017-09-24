@@ -28,9 +28,7 @@ function wpmu_cta_below_posts() {
     if ( is_singular( 'post' ) ) { ?>
         <hr>
         <div class="cta-in-post">
-
-            Call us on 777-1111 or email <a href="email@email.com">email@email.com</a>
-
+            <?php _e('Call us on 777-1111 or email <a href="email@email.com">email@email.com</a>', 'wpmu') ?>
         </div>
 
     <?php }

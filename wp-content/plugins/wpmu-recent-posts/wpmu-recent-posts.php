@@ -23,7 +23,7 @@ function wpmu_get_recent_posts()
         $myposts = get_posts($args);
         if ($myposts) { ?>
 
-            <h2>Latest Posts</h2>
+            <h2><?php _e('Latest Posts', 'wpmu'); ?></h2>
 
             <?php // output the posts
             foreach ($myposts as $mypost) {

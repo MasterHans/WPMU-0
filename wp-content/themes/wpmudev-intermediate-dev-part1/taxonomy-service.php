@@ -4,7 +4,10 @@
             <?php if (have_posts()) : ?>
                 <?php $title = $wp_query->get_queried_object(); ?>
 
-                <h1><?php echo $title->name . ' Projects'; ?></h1>
+                <h1>
+                    <?php echo $title->name; ?>
+                    <?php _e(' Projects', 'wpmu'); ?>
+                </h1>
 
                 <?php echo term_description($title->ID, 'service') ?>
 
