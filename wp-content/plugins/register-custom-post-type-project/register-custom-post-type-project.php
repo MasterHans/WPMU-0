@@ -13,25 +13,26 @@
 /**
  * Registers new post type 'Project'
  */
-function wpmu_create_post_type() {
+function wpmu_create_post_type()
+{
     $labels = array(
-        'name' => __( 'Projects', 'wpmu' ),
-        'singular_name' => __( 'Project', 'wpmu' ),
-        'add_new' => __( 'New Project', 'wpmu' ),
-        'add_new_item' => __( 'Add New Project', 'wpmu' ),
-        'edit_item' => __( 'Edit Project', 'wpmu' ),
-        'new_item' => __( 'New Project', 'wpmu' ),
-        'view_item' => __( 'View Project', 'wpmu' ),
-        'search_items' => __( 'Search Projects', 'wpmu' ),
-        'not_found' =>  __( 'No Projects Found', 'wpmu' ),
-        'not_found_in_trash' => __( 'No Projects found in Trash', 'wpmu' ),
+        'name' => __('Projects', 'wpmu'),
+        'singular_name' => __('Project', 'wpmu'),
+        'add_new' => __('New Project', 'wpmu'),
+        'add_new_item' => __('Add New Project', 'wpmu'),
+        'edit_item' => __('Edit Project', 'wpmu'),
+        'new_item' => __('New Project', 'wpmu'),
+        'view_item' => __('View Project', 'wpmu'),
+        'search_items' => __('Search Projects', 'wpmu'),
+        'not_found' => __('No Projects Found', 'wpmu'),
+        'not_found_in_trash' => __('No Projects found in Trash', 'wpmu'),
     );
     $args = array(
         'labels' => $labels,
         'has_archive' => true,
         'public' => true,
         'hierarchical' => false,
-        'rewrite' => array( 'slug' => 'projects' ),
+        'rewrite' => array('slug' => 'projects'),
         'supports' => array(
             'title',
             'editor',
@@ -40,46 +41,75 @@ function wpmu_create_post_type() {
             'thumbnail',
             'page-attributes'
         ),
-        'taxonomies' => array( 'post_tag', 'category'),
+        'taxonomies' => array('post_tag', 'category'),
     );
-    register_post_type( 'project', $args );
+    register_post_type('project', $args);
 }
-add_action( 'init', 'wpmu_create_post_type' );
+
+add_action('init', 'wpmu_create_post_type');
 /**
  * Register the custom taxonomy - "Service"
  */
-function wpmu_register_taxonomy() {
-
+function wpmu_register_taxonomy()
+{
+    //Register "Services"
     $labels = array(
-        'name'              => __( 'Services', 'wpmu' ),
-        'singular_name'     => __( 'Service', 'wpmu' ),
-        'search_items'      => __( 'Search Services', 'wpmu' ),
-        'all_items'         => __( 'All Services', 'wpmu' ),
-        'edit_item'         => __( 'Edit Services', 'wpmu' ),
-        'update_item'       => __( 'Update Services', 'wpmu' ),
-        'add_new_item'      => __( 'Add New Services', 'wpmu' ),
-        'new_item_name'     => __( 'New Service Name', 'wpmu' ),
-        'menu_name'         => __( 'Services', 'wpmu' ),
+        'name' => __('Services', 'wpmu'),
+        'singular_name' => __('Service', 'wpmu'),
+        'search_items' => __('Search Services', 'wpmu'),
+        'all_items' => __('All Services', 'wpmu'),
+        'edit_item' => __('Edit Services', 'wpmu'),
+        'update_item' => __('Update Services', 'wpmu'),
+        'add_new_item' => __('Add New Services', 'wpmu'),
+        'new_item_name' => __('New Service Name', 'wpmu'),
+        'menu_name' => __('Services', 'wpmu'),
     );
 
     $args = array(
         'labels' => $labels,
         'hierarchical' => true,
         'sort' => true,
-        'args' => array( 'orderby' => 'term_order' ),
-        'rewrite' => array( 'slug' => 'services' ),
+        'args' => array('orderby' => 'term_order'),
+        'rewrite' => array('slug' => 'services'),
         'show_admin_column' => true
     );
 
-    register_taxonomy( 'service', array( 'post', 'project' ), $args);
+    register_taxonomy('service', array('post', 'project'), $args);
 
+    //Register "Country"
+
+    $labels = array(
+        'name' => __('Countries', 'wpmu'),
+        'singular_name' => __('Country', 'wpmu'),
+        'search_items' => __('Search Countries', 'wpmu'),
+        'all_items' => __('All Countries', 'wpmu'),
+        'edit_item' => __('Edit Countries', 'wpmu'),
+        'update_item' => __('Update Countries', 'wpmu'),
+        'add_new_item' => __('Add New Countries', 'wpmu'),
+        'new_item_name' => __('New CountriesName', 'wpmu'),
+        'menu_name' => __('Countries', 'wpmu'),
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'hierarchical' => true,
+        'sort' => true,
+        'args' => array('orderby' => 'term_order'),
+        'rewrite' => array('slug' => 'countries'),
+        'show_admin_column' => true
+    );
+    register_taxonomy('country', array('post', 'project'), $args);
 }
-add_action( 'init', 'wpmu_register_taxonomy' );
+
+add_action('init', 'wpmu_register_taxonomy');
+
 
 /**
  * Registers the 'Categories' taxonomy to Pages
  */
-function wpmu_add_categories_to_pages() {
-    register_taxonomy_for_object_type( 'category', 'page' );
+function wpmu_add_categories_to_pages()
+{
+    register_taxonomy_for_object_type('category', 'page');
 }
-add_action( 'init', 'wpmu_add_categories_to_pages' );
+
+add_action('init', 'wpmu_add_categories_to_pages');

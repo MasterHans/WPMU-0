@@ -118,6 +118,28 @@ footer .widget {
 	padding: 1em;
 }
 
+.entry-meta-before {
+	border: 1px solid #444;
+	padding: 1rem 0.7rem;
+	padding-bottom: 0;
+	margin-bottom: 1rem;
+}
+
+.single-post .entry-meta {
+	margin: 1rem 0;
+	padding: 1rem;
+}
+.single-post .entry-meta ul {
+	list-style: none;
+	padding: 0;
+	margin-bottom: 0.4rem;
+	text-align: center;
+	font-size: 1rem;
+}
+.single-post .entry-meta ul .post-meta-key {
+	font-weight: bold;
+}
+
 
 /* ------- 3. Universal elements ------- */
 
@@ -460,7 +482,7 @@ nav.main ul li:hover > ul {
 
 /* desktops*/
 @media screen and (min-width: 1025px) {
-	header, .container, nav.main .menu, sidebar {
+	header, .container, nav.main .menu, .sidebar {
 		max-width: 1000px;
 	}
 	nav.main .menu {

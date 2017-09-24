@@ -8,7 +8,7 @@
 
 <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>">
+<body <?php body_class(); ?>>
 
 <?php do_action( 'wpmu_before_header' ); ?>
 

@@ -691,7 +691,7 @@ add_action('wpmu_after_content', 'wpmu_cta_box_after_content');
  * Add column class to body
  */
 
-function wpmu_add_class_to_body()
+function wpmu_add_class_to_body($classes)
 {
 // Add class for one or two column page layouts.
 

@@ -11,7 +11,7 @@ Author URI: http://masterhans.ru/
 function wpmu_get_recent_posts()
 {
 
-    if (!is_home()) {
+    if (!is_home() && !is_page('countries')) {
         /*arguments*/
         $args = array(
             'sort_order' => 'desc',
