@@ -103,4 +103,11 @@ function wpmu_add_pages_to_category_archives( $query ) {
 }
 add_action( 'pre_get_posts', 'wpmu_add_pages_to_category_archives' );
 
+function wpmu_theme_i18n() {
+
+	load_theme_textdomain( 'wpmu', get_template_directory() . '/languages');
+
+}
+add_action( 'after_setup_theme', 'wpmu_theme_i18n' );
+
 ?>

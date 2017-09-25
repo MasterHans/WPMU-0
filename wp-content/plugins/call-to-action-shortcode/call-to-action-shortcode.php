@@ -6,6 +6,8 @@
  * Version:       1.0
  * Author:        Rachel McCollin
  * Author URI:    http://rachelmccollin.co.uk
+ * Text Domain: wpmu
+ * Domain Path: /languages
  *
  */
 
@@ -80,3 +82,12 @@ function wpmu_cta_atts($atts, $content = null)
 }
 
 add_shortcode('cta-atts', 'wpmu_cta_atts');
+
+function wpmu_cta_shortcode_i18n()
+{
+
+    load_plugin_textdomain('wpmu', false, plugin_basename(dirname(__FILE__)) . '/languages');
+
+}
+
+add_action('after_setup_theme', 'wpmu_cta_shortcode_i18n');

@@ -6,13 +6,14 @@
  * Version:       1.0
  * Author:        Rachel McCollin
  * Author URI:    http://rachelmccollin.co.uk
- *
+ * Text Domain: wpmu
+ * Domain Path: /languages
  */
 
 /*********************************************************************************
  * Enqueue stylesheet
  *********************************************************************************/
-function wpmu_hook_enqueue_styles()
+function wpmu_latest_project_to_sidebar_enqueue_styles()
 {
 
     wp_register_style('latest_project_css', plugins_url('public/css/style.css', __FILE__));
@@ -20,7 +21,7 @@ function wpmu_hook_enqueue_styles()
 
 }
 
-add_action('wp_enqueue_scripts', 'wpmu_hook_enqueue_styles');
+add_action('wp_enqueue_scripts', 'wpmu_latest_project_to_sidebar_enqueue_styles');
 
 function wpmu_latest_project()
 {
@@ -94,3 +95,10 @@ function wpmu_latest_project()
 }
 
 add_action('wpmu_after_sidebar', 'wpmu_latest_project');
+
+function wpmu_latest_project_to_sidebar_metabox_i18n()
+{
+    load_plugin_textdomain('wpmu', false, plugin_basename(dirname(__FILE__)) . '/languages');
+}
+
+add_action('after_setup_theme', 'wpmu_latest_project_to_sidebar_metabox_i18n');

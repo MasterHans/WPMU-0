@@ -43,8 +43,6 @@ add_action( 'wpmu_after_content', 'wpmu_cta_below_posts' );
 wpmu_cta_i18n - registers text domain for i18n
 **********************************************************************************/
 function wpmu_cta_i18n() {
-	
 	load_plugin_textdomain( 'wpmu', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
-
 }
 add_action( 'plugins_loaded', 'wpmu_cta_i18n' );

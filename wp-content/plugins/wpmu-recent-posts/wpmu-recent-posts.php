@@ -6,6 +6,8 @@ Description: Custom query for recent post
 Author: Alexander Suvorov
 Version: 1.0
 Author URI: http://masterhans.ru/
+Text Domain: wpmu
+Domain Path: /languages
 */
 
 function wpmu_get_recent_posts()
@@ -48,3 +50,10 @@ function wpmu_get_recent_posts()
     }
 }
 add_action('wpmu_after_content', 'wpmu_get_recent_posts');
+
+function wpmu_recent_posts_i18n()
+{
+    load_plugin_textdomain('wpmu', false, plugin_basename(dirname(__FILE__)) . '/languages');
+}
+
+add_action('after_setup_theme', 'wpmu_recent_posts_i18n');
