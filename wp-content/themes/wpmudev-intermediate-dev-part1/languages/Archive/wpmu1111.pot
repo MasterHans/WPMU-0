@@ -1,0 +1,292 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2017-09-25 15:40+0300\n"
+"PO-Revision-Date: 2017-09-25 15:45+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.4\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr__\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:6
+msgid "404 - Page Not Found!!"
+msgstr "404 - Страница не найдена !!!"
+
+#: archive-project.php:6
+msgid "Our Favorite Projects"
+msgstr "Ваши Любимые  Проэкты"
+
+#: archive.php:10 search.php:11
+msgid "Archive for "
+msgstr "Архив для "
+
+#: author.php:9
+msgid "Posted by: "
+msgstr "Опубликовано От: "
+
+#: author.php:19
+#, php-format
+msgid "<p><a href=\"%1$s\">Visit %2$s&#39;s website</a></p>"
+msgstr "<p><a href=\"%1$s\">Посетите веб-сайт для %2$s's</a></p>"
+
+#: functions.php:12
+msgid "Primary"
+msgstr "Основной"
+
+#: functions.php:23
+msgid "Header Widget Area"
+msgstr "Область виджетов шапки"
+
+#: functions.php:32 includes/customizer.php:47
+msgid "Sidebar"
+msgstr "СайдБар"
+
+#: functions.php:41
+msgid "First Footer Widget Area"
+msgstr "Первая область виджетов нижнего колонтитула"
+
+#: functions.php:50
+msgid "Second Footer Widget Area"
+msgstr "Вторая область виджет подвала"
+
+#: functions.php:59
+msgid "Third Footer Widget Area"
+msgstr "Третья область подвала"
+
+#: functions.php:68
+msgid "Fourth Footer Widget Area"
+msgstr ""
+
+#: includes/customizer.php:27
+msgid "Contact Details"
+msgstr "Контакты:"
+
+#: includes/customizer.php:32
+msgid "Color Scheme"
+msgstr "Цветовая схема"
+
+#: includes/customizer.php:37
+msgid "Website Logo"
+msgstr "Логотип Вебсайта"
+
+#: includes/customizer.php:42
+msgid "Website Page Layout"
+msgstr "Отображение Страниц Сайта"
+
+#: includes/customizer.php:51
+msgid "Footer"
+msgstr "Подвал:"
+
+#: includes/customizer.php:56
+msgid "Call To Action"
+msgstr "Призыв к Действию"
+
+#: includes/customizer.php:87
+msgid "Your address"
+msgstr "Ваш адрес"
+
+#: includes/customizer.php:93
+msgid "Address"
+msgstr "Адрес"
+
+#: includes/customizer.php:100
+msgid "Your telephone number"
+msgstr ""
+
+#: includes/customizer.php:106
+msgid "Telephone Number"
+msgstr ""
+
+#: includes/customizer.php:113
+msgid "Your email address"
+msgstr ""
+
+#: includes/customizer.php:119
+msgid "Email"
+msgstr ""
+
+#: includes/customizer.php:132
+msgid "Main color"
+msgstr ""
+
+#: includes/customizer.php:139
+msgid "Secondary color"
+msgstr ""
+
+#: includes/customizer.php:146
+msgid "Links color"
+msgstr ""
+
+#: includes/customizer.php:153
+msgid "Links color (on hover)"
+msgstr ""
+
+#: includes/customizer.php:182
+msgid "Your Logo"
+msgstr ""
+
+#: includes/customizer.php:189
+msgid "Upload a logo"
+msgstr ""
+
+#: includes/customizer.php:210
+msgid "Title radio float Selection:"
+msgstr ""
+
+#: includes/customizer.php:212
+msgid "This is a custom radio input."
+msgstr ""
+
+#: includes/customizer.php:233
+msgid "Replace title with logo:"
+msgstr ""
+
+#: includes/customizer.php:235
+msgid "Choos what to sho title, logo or both."
+msgstr ""
+
+#: includes/customizer.php:239
+msgid "Logo"
+msgstr ""
+
+#: includes/customizer.php:240
+msgid "Title"
+msgstr ""
+
+#: includes/customizer.php:241
+msgid "Both"
+msgstr ""
+
+#: includes/customizer.php:255
+msgid "Choose logo position:"
+msgstr ""
+
+#: includes/customizer.php:257
+msgid "Choose where will logo display above or below title."
+msgstr ""
+
+#: includes/customizer.php:261
+msgid "Logo above title"
+msgstr ""
+
+#: includes/customizer.php:262
+msgid "Logo below title"
+msgstr ""
+
+#: includes/customizer.php:283
+msgid "Page width"
+msgstr ""
+
+#: includes/customizer.php:296 includes/customizer.php:366
+msgid "Page Layout"
+msgstr ""
+
+#: includes/customizer.php:299
+msgid ""
+"When the two-column layout is assigned, the page title is in one column and "
+"content is in the other."
+msgstr ""
+
+#: includes/customizer.php:301
+msgid "One Column"
+msgstr ""
+
+#: includes/customizer.php:302
+msgid "Two Column"
+msgstr ""
+
+#: includes/customizer.php:316
+msgid "Display Site Bar "
+msgstr ""
+
+#: includes/customizer.php:325
+msgid "Enter text for sidebar:"
+msgstr ""
+
+#: includes/customizer.php:331
+msgid "Sidebar text:"
+msgstr ""
+
+#: includes/customizer.php:337
+msgid "Enter text for footer:"
+msgstr ""
+
+#: includes/customizer.php:343
+msgid "Footer text:"
+msgstr ""
+
+#: includes/customizer.php:350
+msgid "Enter text for call to action button:"
+msgstr ""
+
+#: includes/customizer.php:356
+msgid "Call To Action Text:"
+msgstr ""
+
+#: includes/customizer.php:369
+msgid ""
+"Please choose is the call to action button display or not. And choose the "
+"position."
+msgstr ""
+
+#: includes/customizer.php:371 includes/customizer.php:421
+msgid "On Pages"
+msgstr ""
+
+#: includes/customizer.php:372 includes/customizer.php:422
+msgid "On Posts"
+msgstr ""
+
+#: includes/customizer.php:373 includes/customizer.php:423
+msgid "None"
+msgstr ""
+
+#: includes/customizer.php:390
+msgid "Phone for CTA box after content:"
+msgstr ""
+
+#: includes/customizer.php:405
+msgid "Email for CTA box after content:"
+msgstr ""
+
+#: includes/customizer.php:416
+msgid "CTA box position:"
+msgstr ""
+
+#: includes/customizer.php:419
+msgid "Please choose position of CTA box after the content."
+msgstr ""
+
+#: loop-project.php:2 loop.php:2
+#, php-format
+msgid "Permanent Link to %s"
+msgstr ""
+
+#: loop-project.php:13 loop-single.php:47
+msgid "Services"
+msgstr ""
+
+#: loop-single.php:16
+#, php-format
+msgid "<p>Written by <a href=\"%1$s\">%2$s</a> on %3$s</p>"
+msgstr ""
+
+#: loop-single.php:21
+msgid "<p>Posted in"
+msgstr ""
+
+#: loop-single.php:28
+msgid "<p>Tags"
+msgstr ""
+
+#: taxonomy-country.php:9 taxonomy-service.php:9
+msgid " Projects"
+msgstr ""
