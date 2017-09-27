@@ -17,15 +17,15 @@ function sag_create_post_type_employee()
 {
     $labels = array(
         'name' => __('Employees', 'sag'),
-        'singular_name' => __('Employee', 'sag'),
-        'add_new' => __('New Employee', 'sag'),
-        'add_new_item' => __('Add New Employee', 'sag'),
-        'edit_item' => __('Edit Employee', 'sag'),
-        'new_item' => __('New Employee', 'sag'),
-        'view_item' => __('View Employee', 'sag'),
-        'search_items' => __('Search Employees', 'sag'),
-        'not_found' => __('No Employees Found', 'sag'),
-        'not_found_in_trash' => __('No Employees found in Trash', 'sag'),
+        'singular_name' => __('Employee', 'sag-intermediate-final-challenge-plugin-part-1'),
+        'add_new' => __('New Employee', 'sag-intermediate-final-challenge-plugin-part-1'),
+        'add_new_item' => __('Add New Employee', 'sag-intermediate-final-challenge-plugin-part-1'),
+        'edit_item' => __('Edit Employee', 'sag-intermediate-final-challenge-plugin-part-1'),
+        'new_item' => __('New Employee', 'sag-intermediate-final-challenge-plugin-part-1'),
+        'view_item' => __('View Employee', 'sag-intermediate-final-challenge-plugin-part-1'),
+        'search_items' => __('Search Employees', 'sag-intermediate-final-challenge-plugin-part-1'),
+        'not_found' => __('No Employees Found', 'sag-intermediate-final-challenge-plugin-part-1'),
+        'not_found_in_trash' => __('No Employees found in Trash', 'sag-intermediate-final-challenge-plugin-part-1'),
     );
     $args = array(
         'labels' => $labels,
@@ -56,15 +56,15 @@ function sag_register_taxonomies()
 {
 //Register "Occupation"
     $labels = array(
-        'name' => __('Positions', 'sag'),
-        'singular_name' => __('Repairman', 'sag'),
-        'search_items' => __('Search Positions', 'sag'),
-        'all_items' => __('All Positions', 'sag'),
-        'edit_item' => __('Edit Positions', 'sag'),
-        'update_item' => __('Update Positions', 'sag'),
-        'add_new_item' => __('Add New Positions', 'sag'),
-        'new_item_name' => __('New Position Name', 'sag'),
-        'menu_name' => __('Positions', 'sag'),
+        'name' => __('Positions', 'sag-intermediate-final-challenge-plugin-part-1'),
+        'singular_name' => __('Repairman', 'sag-intermediate-final-challenge-plugin-part-1'),
+        'search_items' => __('Search Positions', 'sag-intermediate-final-challenge-plugin-part-1'),
+        'all_items' => __('All Positions', 'sag-intermediate-final-challenge-plugin-part-1'),
+        'edit_item' => __('Edit Positions', 'sag-intermediate-final-challenge-plugin-part-1'),
+        'update_item' => __('Update Positions', 'sag-intermediate-final-challenge-plugin-part-1'),
+        'add_new_item' => __('Add New Positions', 'sag-intermediate-final-challenge-plugin-part-1'),
+        'new_item_name' => __('New Position Name', 'sag-intermediate-final-challenge-plugin-part-1'),
+        'menu_name' => __('Positions', 'sag-intermediate-final-challenge-plugin-part-1'),
     );
 
     $args = array(
@@ -90,7 +90,7 @@ add_action('init', 'sag_register_taxonomies');
  * Adds metabox to admin screen
  */
 function sag_add_post_metabox() {
-    add_meta_box( 'sag_metabox', __('Occupation:', 'sag'), 'sag_metabox_callback', 'employee', 'normal', 'high' );
+    add_meta_box( 'sag_metabox', __('Occupation:', 'sag-intermediate-final-challenge-plugin-part-1'), 'sag_metabox_callback', 'employee', 'normal', 'high' );
 }
 add_action( 'add_meta_boxes', 'sag_add_post_metabox' );
 
@@ -102,7 +102,7 @@ function sag_metabox_callback( $post ) { ?>
 		//retrieve metadata value if it exists
 		$skills = get_post_meta( $post->ID, 'sag_skills', true ); ?>
 
-		<label for "sag_metadata_skills"><?php _e('Employee Skills','sag');?></label>
+		<label for "sag_metadata_skills"><?php _e('Employee Skills','sag-intermediate-final-challenge-plugin-part-1');?></label>
 		<input type="text" name="sag_metadata_skills" value=<?php echo esc_attr( $skills ); ?>>
 
 <?php }
@@ -142,7 +142,7 @@ add_action( 'admin_init','sag_remove_custom_fields_ui' );
 
 function sag_metabox_plugin_i18n()
 {
-    load_plugin_textdomain('sag', false, plugin_basename(dirname(__FILE__)) . '/languages');
+    load_plugin_textdomain('sag-intermediate-final-challenge-plugin-part-1', false, plugin_basename(dirname(__FILE__)) . '/languages');
 }
 
 add_action('after_setup_theme', 'sag_metabox_plugin_i18n');
